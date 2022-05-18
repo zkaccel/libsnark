@@ -223,6 +223,7 @@ add_executable(
 target_link_libraries(
   profile_r1cs_ppzksnark
 
+  coral-api
   snark
 )
 
@@ -235,6 +236,7 @@ add_executable(
 target_link_libraries(
   profile_r1cs_se_ppzksnark
 
+  coral-api
   snark
 )
 
@@ -283,6 +285,7 @@ add_executable(
 target_link_libraries(
   profile_r1cs_gg_ppzksnark
 
+  coral-api
   snark
 )
 
@@ -320,6 +323,7 @@ add_executable(
 target_link_libraries(
   profile_uscs_ppzksnark
 
+  coral-api
   snark
 )
 
@@ -553,6 +557,7 @@ add_executable(
 target_link_libraries(
   zk_proof_systems_r1cs_ppzksnark_test
 
+  coral-api
   snark
 )
 
@@ -565,6 +570,7 @@ add_executable(
 target_link_libraries(
   zk_proof_systems_r1cs_se_ppzksnark_test
 
+  coral-api
   snark
 )
 
@@ -577,6 +583,7 @@ add_executable(
 target_link_libraries(
   zk_proof_systems_r1cs_gg_ppzksnark_test
 
+  coral-api
   snark
 )
 
@@ -614,6 +621,7 @@ add_executable(
 target_link_libraries(
   zk_proof_systems_uscs_ppzksnark_test
 
+  coral-api
   snark
 )
 

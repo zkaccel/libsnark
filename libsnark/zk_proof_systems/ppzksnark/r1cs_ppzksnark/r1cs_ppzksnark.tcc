@@ -517,7 +517,7 @@ r1cs_ppzksnark_proof<ppT> r1cs_ppzksnark_prover(const r1cs_ppzksnark_proving_key
     libff::enter_block("Compute answer to H-query", false);
     g_H = g_H + libff::multi_exp<libff::G1<ppT>,
                                  libff::Fr<ppT>,
-                                 libff::multi_exp_method_BDLO12>(
+                                 libff::multi_exp_method_inaccel>(
         pk.H_query.begin(), pk.H_query.begin()+qap_wit.degree()+1,
         qap_wit.coefficients_for_H.begin(), qap_wit.coefficients_for_H.begin()+qap_wit.degree()+1,
         chunks);
@@ -526,7 +526,7 @@ r1cs_ppzksnark_proof<ppT> r1cs_ppzksnark_prover(const r1cs_ppzksnark_proving_key
     libff::enter_block("Compute answer to K-query", false);
     g_K = g_K + libff::multi_exp_with_mixed_addition<libff::G1<ppT>,
                                                      libff::Fr<ppT>,
-                                                     libff::multi_exp_method_bos_coster>(
+                                                     libff::multi_exp_method_inaccel>(
         pk.K_query.begin()+1, pk.K_query.begin()+1+qap_wit.num_variables(),
         qap_wit.coefficients_for_ABCs.begin(), qap_wit.coefficients_for_ABCs.begin()+qap_wit.num_variables(),
         chunks);

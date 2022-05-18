@@ -7,7 +7,11 @@ RUN apt-get update && \
     wget unzip curl \
     build-essential cmake git libgmp3-dev libprocps4-dev python-markdown libboost-all-dev libssl-dev pkg-config
 
-RUN git clone https://github.com/scipr-lab/libsnark/ \
+RUN curl -sS https://setup.inaccel.com/repository | sh \
+ && apt install -y coral-api \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/zkaccel/libsnark/ \
   && cd libsnark \
   && git submodule init && git submodule update \
   && mkdir build && cd build && cmake .. \
